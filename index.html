@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 PDF 변환 및 OCR</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>이미지 PDF 변환 및 OCR</h1>
+
+        <div class="upload-area" id="uploadArea">
+            <p>이미지 파일을 여기에 드래그하거나 클릭하여 선택하세요</p>
+            <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+            <button class="btn" id="selectBtn">파일 선택</button>
+
+            <div style="margin-top: 15px;">
+                <label for="sortSelect">정렬 기준: </label>
+                <select id="sortSelect" class="sort-select">
+                    <option value="none">정렬 안함 (수동 순서)</option>
+                    <option value="name">파일 이름 (오름차순)</option>
+                    <option value="nameDesc">파일 이름 (내림차순)</option>
+                    <option value="date">날짜 (오래된 순)</option>
+                    <option value="dateDesc">날짜 (최신 순)</option>
+                </select>
+                <button class="btn" id="clearAllBtn" style="background-color: #6c757d;" disabled>전체 삭제</button>
+            </div>
+        </div> <div class="generation-controls">
+            <div class="options-area">
+                <strong>PDF 페이지 크기:</strong>
+                <label><input type="radio" name="pdfSizeMode" value="a4" checked> A4 맞춤</label>
+                <label><input type="radio" name="pdfSizeMode" value="image"> 이미지 크기</label>
+                <br>
+                <label for="qualitySelect"><strong>이미지 품질:</strong></label>
+                <select id="qualitySelect">
+                    <option value="MEDIUM">중간화질 (기본)</option>
+                    <option value="FAST">저화질 (파일 크기 작음)</option>
+                    <option value="SLOW">고화질</option>
+                    <option value="NONE">원본화질 (압축 최소화)</option>
+                </select>
+                <br>
+                 <label for="pdfFilename"><strong>PDF 파일 이름:</strong></label>
+                 <input type="text" id="pdfFilename" value="이미지_모음">
+                 <span>.pdf</span>
+                 <br>
+                 <label for="splitPageCount"><strong>페이지 수로 분할:</strong></label>
+                 <input type="number" id="splitPageCount" min="0" value="0">
+                 <span style="font-size: 0.9em;"> 페이지 마다 (0 = 분할 안함)</span>
+            </div>
+
+            <div>
+                <button class="btn" id="generateBtn" disabled>PDF 생성</button>
+                <div id="loadingSpinnerContainer" class="spinner-container" style="display: none;">
+                     <div class="spinner"></div>
+                </div>
+                <div class="status" id="status"></div>
+            </div>
+        </div>
+        <h4 style="text-align: center; margin-bottom: 5px; color: #555;" id="imageCountDisplay">업로드된 이미지 (0개)</h4>
+
+        <div class="image-preview" id="imagePreview"></div>
+
+    </div> <div id="ocrModal">
+        <div id="ocrModalContent">
+            <h3 id="ocrModalTitle">OCR 결과</h3>
+            <hr>
+            <pre id="ocrResultText"></pre>
+            <hr>
+            <button class="btn" onclick="closeOcrModal()" id="ocrModalCloseBtn">닫기</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
