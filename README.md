@@ -33,8 +33,8 @@ simple-image-pdf-tool/
 │   └── style.css       # 주요 스타일 정의
 ├── js/                 # JavaScript 코드 폴더
 │   └── script.js       # 애플리케이션 로직
-├── README.md           # 프로젝트 설명 (이 파일)
-└── LICENSE             # 라이선스 정보 (추가 권장)    
+├── README.md           # 프로젝트 설명
+└── LICENSE             # 라이선스 정보   
 ```
 ## 🚀 사용 방법
 
