@@ -5,16 +5,19 @@ body {
     padding: 20px;
     background-color: #f5f5f5;
 }
+
 .container {
     background-color: white;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 h1 {
     color: #333;
     text-align: center;
 }
+
 .upload-area {
     border: 2px dashed #ccc;
     border-radius: 8px;
@@ -23,11 +26,15 @@ h1 {
     margin: 20px 0;
     transition: all 0.3s;
 }
+
 .upload-area:hover {
     border-color: #0078d7;
     background-color: #f9f9f9;
 }
-.btn, .ocr-btn { /* OCR 버튼에도 기본 스타일 적용 */
+
+.btn,
+.ocr-btn {
+    /* OCR 버튼에도 기본 스타일 적용 */
     background-color: #0078d7;
     color: white;
     border: none;
@@ -35,18 +42,25 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    margin: 10px 5px; /* 버튼 간 좌우 마진 추가 */
+    margin: 10px 5px;
+    /* 버튼 간 좌우 마진 추가 */
     transition: background-color 0.3s;
     vertical-align: middle;
 }
-.btn:hover, .ocr-btn:hover {
+
+.btn:hover,
+.ocr-btn:hover {
     background-color: #005a9e;
 }
-.btn:disabled, .ocr-btn:disabled { /* 비활성화 스타일 */
+
+.btn:disabled,
+.ocr-btn:disabled {
+    /* 비활성화 스타일 */
     background-color: #cccccc;
     cursor: not-allowed;
     opacity: 0.6;
 }
+
 /* --- 스크롤 가능 이미지 미리보기 --- */
 .image-preview {
     display: flex;
@@ -58,9 +72,12 @@ h1 {
     padding: 10px;
     background-color: #fafafa;
     border-radius: 4px;
-    max-height: 460px; /* 최대 높이 설정 (예: 3줄 정도) */
-    overflow-y: auto; /* 내용이 넘치면 세로 스크롤 자동 생성 */
+    max-height: 460px;
+    /* 최대 높이 설정 (예: 3줄 정도) */
+    overflow-y: auto;
+    /* 내용이 넘치면 세로 스크롤 자동 생성 */
 }
+
 .image-item {
     position: relative;
     width: 150px;
@@ -69,51 +86,73 @@ h1 {
     border-radius: 4px;
     overflow: hidden;
     background-color: white;
-    flex-shrink: 0; /* 아이템 크기 줄어들지 않도록 */
+    flex-shrink: 0;
+    /* 아이템 크기 줄어들지 않도록 */
 }
+
 .image-item img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
-.remove-btn, .ocr-btn-on-item { /* 이미지 위 버튼들 공통 위치 */
+
+.remove-btn,
+.ocr-btn-on-item {
+    /* 이미지 위 버튼들 공통 위치 */
     position: absolute;
     color: white;
     border: none;
-    border-radius: 4px; /* 사각형 버튼으로 변경 */
-    width: auto; /* 내용에 맞게 */
-    padding: 2px 5px; /* 패딩 조정 */
+    border-radius: 4px;
+    /* 사각형 버튼으로 변경 */
+    width: auto;
+    /* 내용에 맞게 */
+    padding: 2px 5px;
+    /* 패딩 조정 */
     height: 24px;
     cursor: pointer;
-    font-size: 11px; /* 폰트 크기 조정 */
+    font-size: 11px;
+    /* 폰트 크기 조정 */
     line-height: 20px;
     text-align: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
+
 .remove-btn {
     top: 5px;
     right: 5px;
-    background-color: rgba(220, 53, 69, 0.8); /* 빨간색 계열 */
+    background-color: rgba(220, 53, 69, 0.8);
+    /* 빨간색 계열 */
 }
+
 .remove-btn:hover {
-     background-color: rgba(200, 33, 49, 0.9);
+    background-color: rgba(200, 33, 49, 0.9);
 }
-.ocr-btn-on-item { /* 이미지 위 OCR 버튼 스타일 */
+
+.ocr-btn-on-item {
+    /* 이미지 위 OCR 버튼 스타일 */
     bottom: 5px;
     right: 5px;
-    background-color: rgba(0, 120, 215, 0.8); /* 파란색 계열 */
+    background-color: rgba(0, 120, 215, 0.8);
+    /* 파란색 계열 */
 }
- .ocr-btn-on-item:hover {
-     background-color: rgba(0, 90, 185, 0.9);
+
+.ocr-btn-on-item:hover {
+    background-color: rgba(0, 90, 185, 0.9);
 }
+
 .status {
     color: #333;
-    min-height: 1.2em; /* 메시지 없을 때 높이 유지 */
-    display: inline-block; /* 스피너 옆에 오도록 */
+    min-height: 1.2em;
+    /* 메시지 없을 때 높이 유지 */
+    display: inline-block;
+    /* 스피너 옆에 오도록 */
     vertical-align: middle;
-    margin-left: 10px; /* 스피너와의 간격 */
-    font-size: 0.9em; /* 상태 메시지 폰트 약간 작게 */
+    margin-left: 10px;
+    /* 스피너와의 간격 */
+    font-size: 0.9em;
+    /* 상태 메시지 폰트 약간 작게 */
 }
+
 .drag-handle {
     position: absolute;
     bottom: 5px;
@@ -130,53 +169,173 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-.dragging { opacity: 0.4; }
-.drag-over { border: 2px dashed #0078d7 !important; }
-.sort-select, #qualitySelect {
-    padding: 8px; border-radius: 4px; border: 1px solid #ccc;
-    background-color: white; font-size: 14px; cursor: pointer;
-    vertical-align: middle; margin: 5px; /* 위아래 간격 약간 추가 */
+
+.dragging {
+    opacity: 0.4;
 }
-.sort-select:hover, #qualitySelect:hover { border-color: #0078d7; }
-.sort-select:focus, #qualitySelect:focus { outline: none; border-color: #0078d7; box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.2); }
+
+.drag-over {
+    border: 2px dashed #0078d7 !important;
+}
+
+.sort-select,
+#qualitySelect {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 5px;
+    /* 위아래 간격 약간 추가 */
+}
+
+.sort-select:hover,
+#qualitySelect:hover {
+    border-color: #0078d7;
+}
+
+.sort-select:focus,
+#qualitySelect:focus {
+    outline: none;
+    border-color: #0078d7;
+    box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.2);
+}
+
 /* --- 상단 컨트롤 영역 스타일 --- */
 .generation-controls {
-    margin-top: 20px; margin-bottom: 20px; padding: 15px;
-    background-color: #f0f7ff; border-radius: 4px; border: 1px solid #e0e0e0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f0f7ff;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
     text-align: center;
 }
-.options-area { margin-bottom: 15px; /* 옵션 그룹 간 간격 */ }
-.options-area label, .options-area strong, .options-area input[type="text"], .options-area span, .options-area input[type="number"] {
-    margin: 0 5px; vertical-align: middle; font-size: 0.9em; /* 컨트롤 영역 폰트 약간 작게 */
+
+.options-area {
+    margin-bottom: 15px;
+    /* 옵션 그룹 간 간격 */
 }
-.options-area input[type="radio"] { vertical-align: middle; margin-right: 2px; }
-.options-area br { margin-bottom: 10px; display: block; content: ""; }
-#pdfFilename { padding: 7px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; width: 200px; }
-#splitPageCount { vertical-align: middle; width: 60px; padding: 7px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
+
+.options-area label,
+.options-area strong,
+.options-area input[type="text"],
+.options-area span,
+.options-area input[type="number"] {
+    margin: 0 5px;
+    vertical-align: middle;
+    font-size: 0.9em;
+    /* 컨트롤 영역 폰트 약간 작게 */
+}
+
+.options-area input[type="radio"] {
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+.options-area br {
+    margin-bottom: 10px;
+    display: block;
+    content: "";
+}
+
+#pdfFilename {
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+}
+
+#splitPageCount {
+    vertical-align: middle;
+    width: 60px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
 /* --- 로딩 스피너 --- */
-.spinner-container { display: inline-block; vertical-align: middle; }
-.spinner {
-    border: 4px solid #f3f3f3; border-top: 4px solid #0078d7; border-radius: 50%;
-    width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block;
+.spinner-container {
+    display: inline-block;
+    vertical-align: middle;
 }
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0078d7;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* --- OCR 모달 --- */
 #ocrModal {
-    display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6); z-index: 1000;
-    align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
+
 #ocrModalContent {
-    background-color: white; padding: 25px; border-radius: 5px;
-    width: 90%; max-width: 700px; max-height: 90%; overflow-y: auto;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90%;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-#ocrModalContent h3 { margin-top: 0; color: #333; }
-#ocrModalContent hr { border: 0; border-top: 1px solid #eee; margin: 15px 0; }
+
+#ocrModalContent h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+#ocrModalContent hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
 #ocrResultText {
-    white-space: pre-wrap; word-wrap: break-word; font-size: 0.95em;
-    background-color: #f8f8f8; padding: 10px; border: 1px solid #ddd;
-    max-height: 400px; overflow-y: auto; /* 내부 스크롤 */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.95em;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border: 1px solid #ddd;
+    max-height: 400px;
+    overflow-y: auto;
+    /* 내부 스크롤 */
 }
-#ocrModalCloseBtn { float: right; margin-left: 10px; }
+
+#ocrModalCloseBtn {
+    float: right;
+    margin-left: 10px;
+}
+
 /* --- End Styles --- */
